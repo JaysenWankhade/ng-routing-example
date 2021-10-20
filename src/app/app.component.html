@@ -1,0 +1,14 @@
+<h2>{{ title }}</h2>
+<button (click)="login()" *ngIf="!isLoggedIn">Login</button>
+<button (click)="logOut()" *ngIf="isLoggedIn">logout</button>
+<nav>
+    <ul style="list-style: none">
+        <li>
+            <a routerLink="/public">Public Component</a>
+        </li>
+        <li>
+            <a routerLink="/private">private Component</a>
+        </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
