@@ -12,6 +12,6 @@ export class FirstComponent implements OnInit {
   ngOnInit(): void {}
 
   goToChildA() {
-    this.router.navigate(['childA', 123], { relativeTo: this.route });
+    this.router.navigate(['childA', 123, 567], { relativeTo: this.route });
   }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import { FirstComponent } from './first/first.component';
+import { LoginGuard } from './login.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PublicComponent } from './public/public.component';
 import { SecondComponent } from './second/second.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: FirstComponent,
     children: [
       {
-        path: 'childA/:id',
+        path: 'childA/:id/:uid',
         component: ChildAComponent,
       },
       {
@@ -25,6 +26,7 @@ const routes: Routes = [
   {
     path: 'second',
     component: SecondComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'public',
